@@ -1,0 +1,260 @@
+/* Réinitialisation des marges et paddings pour tous les éléments, et définition du modèle de boîte */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style global du corps du document */
+body {
+    font-family: 'Poppins', sans-serif; /* Police moderne et lisible */
+    background-color: bisque; /* Couleur de fond douce */
+}
+
+/* Le html et body prennent toute la hauteur, et la mise en page se fait en colonne */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Les images s’affichent en bloc (évite les espaces blancs sous les images inline) */
+img {
+    display: block;
+}
+
+/* ------------------- Carrousel ------------------- */
+#carrer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+/* Conteneur principal du carrousel */
+.carrousel {
+    position: relative; /* Pour positionner les boutons absolument à l’intérieur */
+    max-width: 800px; /* Largeur maximale du carrousel */
+    margin: 20px auto; /* Centrage horizontal + marge en haut et en bas */
+    padding: 0%;
+    overflow: hidden; /* Cache le débordement des diapositives */
+    border-radius: 10px; /* Bords arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère pour donner du relief */
+}
+
+/* Conteneur des diapositives, mis en ligne pour défiler horizontalement */
+.carrousel__contenu {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animation fluide du défilement */
+}
+
+/* Chaque diapositive occupe 100% du conteneur */
+.carrousel__diapositive {
+    min-width: 100%;
+    text-align: center;
+}
+
+/* Supprime les marges/paddings sur le texte */
+.carrousel__diapositive p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Image de la diapositive avec style propre */
+.carrousel__diapositive--espace-reserve {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Zone de texte par-dessus l'image */
+.carrousel__diapositive--texte {
+    position: absolute;
+    background-color: blueviolet;
+    top: 20%;
+    padding-left: 40%;
+    padding-right: 10%;
+    text-align: left;
+}
+
+/* Style général des boutons de navigation */
+.carrousel__bouton {
+    position: absolute;
+    left: 50%; /* Centré horizontalement */
+    transform: translateX(-50%); /* Correction du centrage */
+    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    color: white;
+    padding: 1.25% 3.75%;
+    cursor: pointer;
+    font-size: clamp(0.5rem, 0.01046vw, 1.2rem);;
+    border-radius: 1.25%;
+}
+
+/* Bouton du haut positionné en haut du carrousel */
+.carrousel__bouton--haut {
+    top: 2.5%;
+}
+
+/* Bouton du bas positionné en bas du carrousel */
+.carrousel__bouton--bas {
+    bottom: 2.5%;
+}
+
+/* Changement de fond au survol */
+.carrousel__bouton:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* ------------------- Poupées gigognes ------------------- */
+
+/* Chaque poupée est composée de deux parties positionnées précisément */
+
+.poupee_gigogne__1 .poupee_gigogne--haut {
+    position: absolute;
+    height: 50%;
+    width: 25%;
+    z-index: 5;
+    left: 5%;
+    top: 0%;
+    border-radius: 100px 100px 0px 0px; /* Bord arrondi en haut */
+}
+
+.poupee_gigogne__1 .poupee_gigogne--bas {
+    position: absolute;
+    height: 50%;
+    z-index: 5;
+    left: 5%;
+    bottom: 0%;
+    border-radius: 0px 0px 100px 100px; /* Bord arrondi en bas */
+}
+
+/* Même structure pour les autres poupées, avec tailles et positions légèrement ajustées */
+
+.poupee_gigogne__2 .poupee_gigogne--haut {
+    position: absolute;
+    height: 47,5%;
+    width: 23.75%;
+    z-index: 4;
+    left: 5.625%;
+    top: 2.5%;
+    border-radius: 95px 95px 0px 0px;
+}
+
+.poupee_gigogne__2 .poupee_gigogne--bas {
+    position: absolute;
+    height: 47,5%;
+    width: 23.75%;
+    z-index: 4;
+    left: 5.625%;
+    bottom: 2.5%;
+    border-radius: 0px 0px 95px 95px;
+}
+
+.poupee_gigogne__3 .poupee_gigogne--haut {
+    position: absolute;
+    height: 45%;
+    width: 22.5%;
+    z-index: 3;
+    left: 6.25%;
+    top: 5%;
+    border-radius: 90px 90px 0px 0px;
+}
+
+.poupee_gigogne__3 .poupee_gigogne--bas {
+    position: absolute;
+    height: 45%;
+    width: 22.5%;
+    z-index: 3;
+    left: 6.25%;
+    bottom: 5%;
+    border-radius: 0px 0px 90px 90px;
+}
+
+.poupee_gigogne__4 .poupee_gigogne--haut {
+    position: absolute;
+    height: 42.5%;
+    width: 21.25%;
+    z-index: 2;
+    left: 6.875%;
+    top: 7.5%;
+    border-radius: 85px 85px 0px 0px;
+}
+
+.poupee_gigogne__4 .poupee_gigogne--bas {
+    position: absolute;
+    height: 42.5%;
+    width: 21.25%;
+    z-index: 2;
+    left: 6.875%;
+    bottom: 7.5%;
+    border-radius: 0px 0px 85px 85px;
+}
+
+.poupee_gigogne__5 .poupee_gigogne--haut {
+    position: absolute;
+    height: 40%;
+    width: 20%;
+    z-index: 1;
+    left: 7.5%;
+    top: 10%;
+    border-radius: 80px 80px 0px 0px;
+}
+
+.poupee_gigogne__5 .poupee_gigogne--bas {
+    position: absolute;
+    height: 40%;
+    width: 20%;
+    z-index: 1;
+    left: 7.5%;
+    bottom: 10%;
+    border-radius: 0px 0px 80px 80px;
+}
+
+/* ------------------- Animations ------------------- */
+
+/* Animation d'ouverture du haut de la poupée */
+.ouvrir--haut {
+    animation: mouvement-haut 2s both;
+}
+
+/* Animation de fermeture du haut (lecture en sens inverse) */
+.fermer--haut {
+    animation: mouvement-haut 2s reverse;
+}
+
+/* Idem pour la partie basse */
+.ouvrir--bas {
+    animation: mouvement-bas 2s both;
+}
+
+.fermer--bas {
+    animation: mouvement-bas 2s reverse;
+}
+
+/* Définition de l'animation vers le haut */
+@keyframes mouvement-haut {
+    0% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px); /* Se déplace vers le haut */
+        opacity: 0;
+    }
+}
+
+/* Définition de l'animation vers le bas */
+@keyframes mouvement-bas {
+    0% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px); /* Se déplace vers le bas */
+        opacity: 0;
+    }
+}
